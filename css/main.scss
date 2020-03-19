@@ -1,0 +1,370 @@
+@import 'var';
+@import 'mixins';
+
+
+/* RESET */
+*{
+    margin: $reset;
+    padding: $reset;
+    box-sizing: border-box;
+}
+/* END */
+
+/* BODY */
+body{
+    font-family: $font;
+    background: $DarkColor;
+}
+.absolute{
+    display: flex;
+    position: absolute;
+    width: $fullwidth;
+    height: auto;
+}
+/* END */
+
+/* HEADERS */
+.nav-head{
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    width: $fullwidth;
+    height: 10vh;
+    margin: auto;
+    background-color: $mainColor;
+    align-items: center;
+    box-shadow: 0px 0px 10px #000;
+}
+.teams-count{
+    width: $fullwidth;
+    height: 20vh;
+    background-color: $mainColorS;
+    text-align: center;
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+header {  
+    nav {
+        flex: 1;
+        font-weight: bold;
+    }
+    .nav-links {
+        justify-content: space-around;
+        list-style: none;
+    }
+    .nav-link {
+        color: #ffffff;
+        font-size: 18px;
+        text-decoration: none;
+        transition: .2s;
+    }
+    .nav-links{
+        display: flex;
+    }
+}
+/* END */
+
+/* NAV */
+
+/* END */
+
+/* MENU LIST */
+.nav-links{
+    display: flex;
+    list-style: none;
+    
+    a{
+        text-decoration: none;
+        color: $LightfontColor;
+    }
+}
+.nom{
+    @include sm{
+        display: none;
+    }
+}
+/* END */
+
+/* GIF BG */
+.responsive {
+    background-image: url(../img/jhin.gif);
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: auto 100%;
+    position: relative;
+    top: 10vh;
+    width: $fullwidth;
+    height: 90vh;
+    z-index: -1;
+}
+.blur{
+    display: flex;
+    background: #000;
+    opacity: .9;
+    position: absolute;
+    top: 10vh;
+    width: $fullwidth;
+    height: 90vh;
+    z-index: 1;
+}
+.sett{
+    position: absolute;
+    color: $LightfontColor;
+    right: 0;
+    margin-right: 3vh;
+    top: 1vh;
+    cursor: pointer;
+    &:hover{
+        color: $mainColor;
+    }
+.of{
+    overflow: scroll;
+}
+}
+.btl{
+    position: absolute;
+    top: 40vh;
+    width: $fullwidth;
+    height: auto;
+    z-index: 2;
+    line-height: 1.5;
+    text-align: center;
+    color: $mainColor;
+    font-weight: bold;
+    @include sm{
+        font-size: 250%;
+    }
+    @include md{
+        font-size: 250%;
+    }
+    @include md-min{
+        font-size: 250%;
+    }
+    @include lg{
+        font-size: 250%;
+    }
+    @include lg-min{
+        font-size: 350%;
+    }
+    @include xl-min{
+        font-size: 550%;
+    }
+    @include rwd(1200){
+        font-size: 350%;
+    }
+}
+.btl-p{
+    vertical-align: top;
+    display: inline-block;
+    line-height: 1.0;
+    font-size: 2vh;
+}
+/* END */
+
+/* SECTIONS */
+.teams{
+    top: 10vh;
+    position: relative;
+    width: $fullwidth;
+    height: 80vh;
+}
+.contact{
+    top: 10vh;
+    position: relative;
+    width: $fullwidth;
+    height: 100vh;
+}
+/* END */
+
+/* TEAMS */
+.team-stats{
+    flex: 1;
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+.team-stat{
+    font-weight: bold;
+    color: $LightfontColor;
+    font-size: 2vh;
+}
+.cl{
+    display: none;
+    cursor: pointer;
+}
+.close-btn{
+    padding: 2vh;
+    border: 3px dashed #505050;
+}
+.teams-brackets{
+    width: $fullwidth;
+    height: 60vh;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+.flex-container {
+    list-style: none;
+    margin: auto;
+    align-items: center;
+    align-content: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .longhand { 
+    -webkit-flex-flow: wrap row;
+    flex-flow: wrap row;
+    li{
+        width: 500px;
+        height: 550px;
+        margin: auto;
+        display: flex;
+        .pla{
+            width: 90%;
+            height: 500px;
+            margin: auto;
+            text-align: center;
+            box-shadow: 3px 3px 10px #000;
+        }
+        .emp{
+            font-size: 5vh;
+            line-height: 500px;
+            color: #505050;
+            border: 5px dashed #505050;
+        }
+        .lol{
+            background-image: url(../img/lold.jpg);
+            background-repeat: no-repeat;
+            background-position: 50% 0;
+            background-size: auto 500px;
+            position: relative;
+            .players{
+                a{
+                    color: $LightfontColor;
+                    text-decoration: none;
+                }
+                height: 30%;
+                color: $LightfontColor;
+                font-size: 2vh;
+                transform: translateY(170%);
+                .view-btn{
+                    background: #000;
+                    border: 3px dashed #303030;
+                    padding: 3%;
+                    transition: ease .2s;
+                    &:hover{
+                        border-radius: 10px;
+                        border: 3px dashed $mainColor;
+                    }
+                }
+            }
+        }
+    }
+    
+  }
+.teams-viewer{
+    z-index: 9;
+    width: $fullwidth;
+    height: 60vh;
+    display: none;
+    position: absolute;
+    background-color: $DarkColor;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+.disp{
+    display: flex;
+}
+.dn{
+    display: none;
+}
+.flex-container-Team {
+    position: relative;
+    list-style: none;
+    margin: auto;
+    align-items: center;
+    align-content: center;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: flex;
+  }
+  .longhand-Team { 
+    -webkit-flex-flow: wrap row;
+    flex-flow: wrap row;
+    li{
+        width: 320px;
+        height: 550px;
+        margin: auto;
+        display: flex;
+        .pla-Team{
+            width: 90%;
+            height: 500px;
+            margin: auto;
+            text-align: center;
+            background: #000;
+            box-shadow: 3px 3px 10px #000;
+        }
+    }
+    
+  }
+.team-stat-Close{
+    display: flex;
+    flex: 1;
+    list-style: none;
+    justify-content: space-around;
+}
+.team-stat-Close{
+    font-weight: bold;
+    color: $LightfontColor;
+    font-size: 2vh;
+}
+/* END */
+
+/* SCROLL STYLE */
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 12px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: $mainColor; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: $mainColor; 
+}
+/* END */
+
+/* CONTACT */
+.tmp-fill{
+    width: $fullwidth;
+    height: 10vh;
+    background-color: $mainColor;
+}
+.tmp-text{
+    color: $mainColor;
+    line-height: 10vh;
+    margin-left: 3vw;
+}
+.tmp-text-v{
+    color: $LightfontColor;
+}
+/* END */

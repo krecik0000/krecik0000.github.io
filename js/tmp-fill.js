@@ -1,0 +1,11 @@
+$(document).ready(function(){
+    $("#conn").click(function(){
+        $("#tmp-fill").addClass("tmp-text-v");
+      });
+    $("#homm").click(function(){
+        $("#tmp-fill").removeClass("tmp-text-v");
+    });
+    $("#temm").click(function(){
+        $("#tmp-fill").removeClass("tmp-text-v");
+    });
+});
